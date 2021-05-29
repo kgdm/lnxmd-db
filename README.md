@@ -1,2 +1,1 @@
-# lnxmd-db
-DB for links demux
+# link-panther-backend

@@ -1,0 +1,14 @@
+#Build
+sudo docker build -t lnxmd:0.1 -f DB_Dockerfile .
+
+#Run
+sudo docker run -d --name lnxmd_instance lnxmd:0.1
+
+#For host and port mapping: 
+sudo docker run -d -h 0.0.0.0 -p 5432:5432 --name lnxmd_instance lnxmd:0.1
+
+#For volume mapping:
+sudo docker run -d -h 0.0.0.0 -p 5432:5432 -v /home/gzix/lnxmd/db/vol-map:/var/lib/postgresql --name lnxmd_instance lnxmd:0.1
+
+#entering into docker container
+sudo docker exec -it lnxmd_instance bash
